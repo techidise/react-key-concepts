@@ -10,7 +10,7 @@ export default function Home() {
           <p className="text-9xl text-green-200">Hello React on NextJS</p>
         </div>
         <div>
-          <Button className="rounded-full bg-green-500 hover:bg-green-600 text-white">
+          <Button className="rounded-full bg-green-500 hover:bg-green-600 text-white hover:cursor-pointer">
             Click Me
           </Button>
         </div>

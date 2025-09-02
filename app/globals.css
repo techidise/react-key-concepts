@@ -117,16 +117,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    /* @apply bg-background text-foreground; */
+    @apply h-full bg-gradient-to-b from-black via-gray-800 to-[#FF6666] text-gray-100;
   }
 }
 
 /* CSS From the book */
-@layer components {
+/* @layer components {
   .low-prio {
     @apply bg-blue-600 text-white;
   }
   .high-prio {
     @apply bg-red-600 text-white;
   }
-}
+} */

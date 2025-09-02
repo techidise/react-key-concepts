@@ -31,13 +31,11 @@ export default function RootLayout({
     //   enableSystem
     //   disableTransitionOnChange
     // >
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased m-0 p-3 text-center`}
+        className={`antialiased m-0 text-center ${geistSans.variable} ${geistMono.variable}`}
       >
-        <main className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 m-5 pb-20 gap-16 sm:p-20 font-[var(--font-geist-sans)]">
-          {children}
-        </main>
+        <main className="container h-full mx-auto py-10 px-6">{children}</main>
       </body>
     </html>
     // </ThemeProvider>
