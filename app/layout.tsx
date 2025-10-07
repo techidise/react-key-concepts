@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
-// import { ThemeProvider } from '@/components/shadcn-example/theme-provider';
+import { ThemeProvider } from '@/components/shadcn-examples/theme-provider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,13 +31,25 @@ export default function RootLayout({
     //   enableSystem
     //   disableTransitionOnChange
     // >
-    <html lang="en" className="h-full">
-      <body
-        className={`antialiased m-0 text-center ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <main className="container h-full mx-auto py-10 px-6">{children}</main>
-      </body>
-    </html>
+    <>
+      <html lang="en" suppressHydrationWarning className="h-full">
+        <head />
+        <body
+          className={`antialiased m-0 text-center ${geistSans.variable} ${geistMono.variable}`}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main className="container h-full mx-auto py-10 px-6">
+              {children}
+            </main>
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
     // </ThemeProvider>
   );
 }

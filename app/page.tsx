@@ -1,5 +1,7 @@
+// =====> Code Ryan tutorial | Section "Lists" Time 2:04:29 <======//
+
 import { Button } from '@/components/ui/button';
-import DarkMode from '@/components/shadcn-example/DarkMode';
+import DarkMode from '@/components/shadcn-examples/DarkMode';
 
 export default function Home() {
   return (

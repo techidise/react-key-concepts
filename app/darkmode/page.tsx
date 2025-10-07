@@ -1,4 +1,4 @@
-import DarkMode from '@/components/shadcn-example/DarkMode';
+import DarkMode from '@/components/shadcn-examples/DarkMode';
 
 const DarkModePage = () => {
   return <DarkMode />;

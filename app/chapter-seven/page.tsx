@@ -1,15 +1,15 @@
 import {
-  // EmailForm,
-  // Counters,
-  FormExample,
+  EmailForm,
+  Counters,
+  // Form,
 } from '@/components/chapters/7/ChapSevenComponents';
 
 const ChapterSeven = () => {
   return (
     <>
-      {/* <EmailForm /> */}
-      {/* <Counters /> */}
-      <FormExample />
+      <EmailForm />
+      <Counters />
+      {/* <Form /> */}
     </>
   );
 };
