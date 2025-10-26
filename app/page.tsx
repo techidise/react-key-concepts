@@ -1,4 +1,5 @@
-// =====> Code Ryan tutorial | Section "Lists" Time 2:04:29 <======//
+// =====> Code Ryan ReactJS tutorial | Section "Lists" Time 2:04:29 <======//
+// =====> Code Ryan NextJS tutorial | Section "Links" Time 0:39:49 <======//
 
 import { Button } from '@/components/ui/button';
 import DarkMode from '@/components/shadcn-examples/DarkMode';
