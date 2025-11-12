@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 type Post = {
   userId: number;
@@ -103,27 +104,30 @@ export const BlogPosts = ({ url }: URLProp) => {
 
 // Alert Component
 export const Alert = () => {
-  const [alertDone, setAlertDone] = useState(false);
+  const [alertMsg, setAlertMsg] = useState<string>('Expired!');
+
+  const handleChangeAlert = (event) => {
+    setAlertMsg(event.target.value);
+  };
+
+  // const setAlert = () => {
+  //   setTimeout(() => {
+  //     console.log(alertMsg);
+  //   }, 2000);
+  // };
 
   useEffect(() => {
-    let timer;
-
-    console.log('Starting Alert Timer!');
-    timer = setTimeout(() => {
-      console.log('Timer expired!');
-      setAlertDone(true);
-    }, 2000);
+    const setAlert = () => {
+      return setTimeout(() => {
+        console.log(alertMsg);
+      }, 2000);
+    };
+    const timer = setAlert();
 
     return () => {
-      console.log('Cleanup!');
       clearTimeout(timer);
     };
-  }, []);
+  }, [alertMsg]);
 
-  return (
-    <>
-      {!alertDone && <p>Relax, you still got some time!</p>}
-      {alertDone && <p>Time to get up!</p>}
-    </>
-  );
+  return <Input type="text" onChange={handleChangeAlert} />;
 };
