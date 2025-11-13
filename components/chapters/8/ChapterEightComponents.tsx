@@ -104,30 +104,38 @@ export const BlogPosts = ({ url }: URLProp) => {
 
 // Alert Component
 export const Alert = () => {
-  const [alertMsg, setAlertMsg] = useState<string>('Expired!');
+  const [enteredEmail, setEnteredEmail] = useState('');
+  const [enteredPassword, setEnteredPassword] = useState('');
 
-  const handleChangeAlert = (event) => {
-    setAlertMsg(event.target.value);
+  const handleUpdateEmail = (e) => {
+    setEnteredEmail(e.target.value);
   };
 
-  // const setAlert = () => {
-  //   setTimeout(() => {
-  //     console.log(alertMsg);
-  //   }, 2000);
-  // };
+  const handleUpdatePassword = (e) => {
+    setEnteredPassword(e.target.value);
+  };
+
+  const validateEmail = () => {
+    if (!enteredEmail.includes('@')) {
+      console.log('Invalid Email!');
+    }
+  };
 
   useEffect(() => {
-    const setAlert = () => {
-      return setTimeout(() => {
-        console.log(alertMsg);
-      }, 2000);
-    };
-    const timer = setAlert();
+    validateEmail();
+  }, [validateEmail]);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [alertMsg]);
-
-  return <Input type="text" onChange={handleChangeAlert} />;
+  return (
+    <form>
+      <div>
+        <label htmlFor="">Email</label>
+        <Input type="email" onChange={handleUpdateEmail} />
+      </div>
+      <div>
+        <label htmlFor="">Password</label>
+        <Input type="password" onChange={handleUpdatePassword} />
+      </div>
+      <Button className="hover:cursor-pointer">Save</Button>
+    </form>
+  );
 };
